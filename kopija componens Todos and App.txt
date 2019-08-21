@@ -1,0 +1,92 @@
+
+---------------------Todos.js
+import React, { Component } from 'react';
+
+
+
+class Todos extends Component {
+    render() {
+        return this.props.todos.map((todo) => (
+            <h3>{ todo.title }</h3>
+        ));
+    }
+}
+    
+
+
+export default Todos
+--------------------------App.js
+import React, { Component } from 'react';
+import Todos from './components/Todos';
+import './App.css';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [
+        {
+          id: 1,
+          title: 'Do what you want',
+          completed: false
+        },
+        {
+          id: 2,
+          title: 'Take care about home',
+          completed: true
+        },
+        {
+          id: 3,
+          title: 'Fix the computer',
+          completed: true
+        }
+      ]
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Todos todos = {this.state.todos}/>
+        </header>
+      </div>
+    );
+  }
+
+  
+}
+
+export default App;
+--------------------------
+---------------
+==================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
